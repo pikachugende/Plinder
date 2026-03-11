@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+:root {
+  --swipe-keep: #22c55e;
+  --swipe-drop: #ef4444;
+}
+
+/* Smooth scrolling & prevent scroll bounce on iOS */
+html {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: #0f0f13;
+  color: #f3f4f6;
+  overscroll-behavior: none;
+  min-height: 100dvh;
+}
+
+#root {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Prevent text selection during swipe */
+.card-dragging {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(135deg, #a78bfa 0%, #f472b6 50%, #fb923c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glowing border */
+.glow-border {
+  box-shadow: 0 0 0 1px rgba(167, 139, 250, 0.3), 0 0 20px rgba(167, 139, 250, 0.1);
+}
+
+/* Hide scrollbar on mobile */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
